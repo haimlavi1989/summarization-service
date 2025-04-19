@@ -36,40 +36,48 @@ summarization-service/
 - Response includes original text length and summary length metrics
 - Comprehensive API documentation with OpenAPI/Swagger
 
-Installation & Setup
-Docker Setup (Recommended)
+## Installation & Setup
 
-Clone the repository:
-git clone https://github.com/haimlavi1989/summarization-service
-cd summarization-service
+### Docker Setup (Recommended)
+1. Clone the repository:
+   ```
+   git clone https://github.com/haimlavi1989/summarization-service
+   cd summarization-service
+   ```
+2. Build the Docker image:
+   ```
+   docker build -t summarization-service .
+   ```
+3. Run the container:
+   ```
+   docker run -p 8000:8000 summarization-service
+   ```
 
-Build the Docker image:
-docker build -t summarization-service .
+The API will be available at `http://localhost:8000`
 
-Run the container:
-docker run -p 8000:8000 summarization-service
-
-
-The API will be available at http://localhost:8000
-Local Development Setup
+### Local Development Setup
 If you prefer to run the service directly on your machine:
 
-Clone the repository (skip if already done):
-git clone https://github.com/haimlavi1989/summarization-service
-cd summarization-service
+1. Clone the repository (skip if already done):
+   ```
+   git clone https://github.com/haimlavi1989/summarization-service
+   cd summarization-service
+   ```
+2. Create a virtual environment and activate it:
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+3. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+4. Run the service:
+   ```
+   uvicorn app.main:app --reload
+   ```
 
-Create a virtual environment and activate it:
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-Install dependencies:
-pip install -r requirements.txt
-
-Run the service:
-uvicorn app.main:app --reload
-
-
-The API will be available at http://localhost:8000
+The API will be available at `http://localhost:8000`
 
 ## API Usage
 
