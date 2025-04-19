@@ -36,47 +36,40 @@ summarization-service/
 - Response includes original text length and summary length metrics
 - Comprehensive API documentation with OpenAPI/Swagger
 
-## Installation & Setup
+Installation & Setup
+Docker Setup (Recommended)
 
-### Local Development Setup
+Clone the repository:
+git clone https://github.com/haimlavi1989/summarization-service
+cd summarization-service
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd summarization-service
-   ```
+Build the Docker image:
+docker build -t summarization-service .
 
-2. Create a virtual environment and activate it:
-   ```
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
+Run the container:
+docker run -p 8000:8000 summarization-service
 
-3. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
 
-4. Run the service:
-   ```
-   uvicorn app.main:app --reload
-   ```
+The API will be available at http://localhost:8000
+Local Development Setup
+If you prefer to run the service directly on your machine:
 
-The API will be available at `http://localhost:8000`
+Clone the repository (skip if already done):
+git clone https://github.com/haimlavi1989/summarization-service
+cd summarization-service
 
-### Docker Setup
+Create a virtual environment and activate it:
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-1. Build the Docker image:
-   ```
-   docker build -t summarization-service .
-   ```
+Install dependencies:
+pip install -r requirements.txt
 
-2. Run the container:
-   ```
-   docker run -p 8000:8000 summarization-service
-   ```
+Run the service:
+uvicorn app.main:app --reload
 
-The API will be available at `http://localhost:8000`
+
+The API will be available at http://localhost:8000
 
 ## API Usage
 
